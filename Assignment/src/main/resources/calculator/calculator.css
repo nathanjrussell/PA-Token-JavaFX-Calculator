@@ -1,0 +1,42 @@
+/* Something needs to go here */
+
+.calculator {
+    -fx-padding: 20;
+    -fx-font-family: "System";
+}
+
+.display {
+    -fx-background-radius: 12;
+    -fx-font-family: "Monospaced";
+    -fx-font-size: 34px;
+    -fx-padding: 14;
+}
+
+.calculator-button {
+    -fx-font-size: 23px;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-width: 2;
+    -fx-background-insets: 0;
+    -fx-cursor: hand;
+}
+
+.number-button {
+}
+
+.operation-button {
+}
+
+.clear-button {
+    -fx-font-size: 20px;
+}
+
+.calculator-button:focused {
+}
+
+.calculator-button:hover {
+}
+
+.calculator-button:pressed,
+.calculator-button:armed {
+}

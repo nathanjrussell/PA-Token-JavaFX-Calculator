@@ -1,0 +1,21 @@
+name: Verify solution
+on:
+  push:
+    branches: [solutions]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  tests:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Check out solution
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - name: Run the instructor grading action
+        id: grade
+        uses: ./.github/actions/instructor
+      - name: Require full credit for the solution
+        env:
+          ASSIGNMENT_SCORE: ${{ steps.grade.outputs.score }}
+        run: test "$ASSIGNMENT_SCORE" = 100
